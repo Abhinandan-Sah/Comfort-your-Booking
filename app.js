@@ -30,6 +30,7 @@ app.get("/testListing", async (req, res) =>{
         location: "Calangute, Goa",
         country: "India",
     });
+    //saving
 
     await sampleListing.save();
     console.log("sample was saved");
