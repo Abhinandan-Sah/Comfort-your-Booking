@@ -4,9 +4,16 @@
     <!-- <form method="GET" action="/listings/new" >
         <button>Create new </button>
     </form> -->
-    <ul>
-        <% for(let listing of allListings) { %>
-            <li> <a href="/listings/<%= listing._id %>"> <%= listing.title %> </a> </li>
-            <% } %>
-    </ul>
+
+    <% for(let listing of allListings) { %>
+        <a href="/listings/<%= listing._id %>"> 
+    <div class="card" style="width: 18rem;">
+        <img src="<%= listing.image %>" class="card-img-top" alt="listing-image">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      </a>
+      <% } %> 
+   
 </body>
