@@ -97,7 +97,20 @@ body{
    background-color: #fe424d !important;
    border: none !important;
 }
+/* Edit page */
+.edit-btn{
+   background-color: #fe424d !important;
+   border: none !important;
+}
 
+/* Show Page */
+.show-img{
+   height: 30vh;
+}
+
+.btns{
+   display: flex;
+}
 
  @media only screen and (min-width:415px) and (max-width: 650px) {
    .card{
