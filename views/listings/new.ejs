@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-8 offset-2">
     <h3>Create a New Listing</h3>
-    <form method="post" action="/listings">
+    <form method="post" action="/listings" class="needs-validation" novalidate>
 
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -21,6 +21,8 @@
           class="form-control"
           required
         />
+        <div class="valid-feedback">Title looks good😊</div>
+        <div class="invalid-feedback">Please enter Title</div>
       </div>
 
 
@@ -32,6 +34,7 @@
           class="form-control"
           required
         ></textarea>
+        <div class="invalid-feedback">Please enter a Description</div>
       </div>
 
       <div class="mb-3">
@@ -56,6 +59,7 @@
               class="form-control"
               required
             />
+            <div class="invalid-feedback">Price should be valid</div>
           </div>
 
           <div class="mb-3 col-md-8">
@@ -67,6 +71,7 @@
               class="form-control"
               required
             />
+            <div class="invalid-feedback">Please enter a country name</div>
           </div>
       </div>
 
@@ -79,6 +84,7 @@
           class="form-control"
           required
         />
+        <div class="invalid-feedback">Country name should be valid</div>
       </div>
 
       <br />
