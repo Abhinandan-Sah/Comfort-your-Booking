@@ -7,7 +7,9 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
-const listingSchema = require("./schema.js");
+const {listingSchema} = require("./schema.js");
+const Review = require("./models/review.js");
+const { log } = require("console");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -31,7 +33,7 @@ main()
   });
 
 app.get("/", (req, res) => {
-  res.send("Hello, I am groot");
+  res.render("listings/home.ejs");
 });
 
 const validateListing = (req, res, next) =>{
@@ -79,7 +81,7 @@ app.post("/listings", validateListing, wrapAsync(async (req, res, next)=>{
 );
 
 //Edit Route
-app.get("/listings/:id/edit", validateListing, wrapAsync(async (req, res, next)=>{
+app.get("/listings/:id/edit", wrapAsync(async (req, res, next)=>{
   const { id } = req.params;
   const listing = await Listing.findById(id);
   res.render("listings/edit.ejs", {listing});
@@ -93,12 +95,25 @@ app.put("/listings/:id", validateListing, wrapAsync(async(req, res, next)=>{
 }));
 
 //Delete Route
-app.delete("/listings/:id", validateListing, wrapAsync(async (req, res, next)=>{
+app.delete("/listings/:id", wrapAsync(async (req, res, next)=>{
   let {id} = req.params;
   let deletedListing = await Listing.findByIdAndDelete(id);
-  console.log(deletedListing);
+  // console.log(deletedListing);
   res.redirect("/listings");
 }));
+
+//Reviews
+// Post Route
+app.post("/listings/:id/reviews", async (req, res) => {
+  let listing = await Listing.findById(req.params.id);
+  let newReview = new Review(req.body.review);
+  listing.reviews.push(newReview);
+
+  await newReview.save();
+  await listing.save();
+  
+  res.redirect(`/listings/${listing.id}`);
+})
 
 //Show Route
 app.get("/listings/:id", wrapAsync(async (req, res, next) => {

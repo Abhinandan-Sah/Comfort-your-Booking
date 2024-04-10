@@ -100,6 +100,7 @@ body{
 /* Edit page */
 .edit-btn{
    background-color: #fe424d !important;
+   color: white !important;
    border: none !important;
 }
 
@@ -112,7 +113,7 @@ body{
    display: flex;
 }
 
- @media only screen and (min-width:415px) and (max-width: 650px) {
+@media only screen and (min-width:415px) and (max-width: 650px) {
    .card{
       width: 30rem !important;
    }
