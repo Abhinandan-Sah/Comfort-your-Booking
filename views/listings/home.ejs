@@ -1,204 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web App</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/yourcode.js"></script>
-  <!-- GSAP Animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-  <!-- Custom CSS -->
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f5f5f5;
-    }
-    .hero-section {
-      background-image: url('https://source.unsplash.com/random/1600x900');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      overflow: hidden;
-    }
-    .hero-section h1 {
-      font-size: 5rem;
-      margin-bottom: 1rem;
-    }
-    .hero-section p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .hero-section .btn {
-      font-size: 1.2rem;
-      padding: 0.75rem 2rem;
-    }
-    .features-section {
-      padding: 8rem 0;
-      background-color: #fff;
-    }
-    .features-section h2 {
-      font-size: 3rem;
-      margin-bottom: 4rem;
-      text-align: center;
-    }
-    .features-section .card {
-      border: none;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
-    }
-    .features-section .card:hover {
-      transform: translateY(-5px);
-    }
-    .features-section .card-body {
-      padding: 3rem;
-    }
-    .features-section .card-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .features-section p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .cta-section {
-      background-color: #007bff;
-      color: #fff;
-      padding: 6rem 0;
-    }
-    .cta-section h2 {
-      font-size: 3rem;
-      margin-bottom: 4rem;
-      text-align: center;
-    }
-    .cta-section .btn {
-      font-size: 1.5rem;
-      padding: 0.75rem 3rem;
-    }
-  </style>
-</head>
-<body>
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 mx-auto">
-            <h1>Welcome to My Web App</h1>
-            <p>The best place to find your next vacation rental</p>
-            <a href="#" class="btn btn-light">Get Started</a>
+<% layout("/layouts/boilerplate") %>
+<body  data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+  <!-- <img src="../img/Group 25.jpg" width="200px" height="200px" alt=""> -->
+
+  <!-- Banner Section -->
+  <section id="home" class="banner_wrapper p-0 ">
+    <!-- slider main container -->
+    <div class="swiper mySwiper ">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" style="background-image: url(../img/slider/slider2.webp);">
+          <div class="slide-caption text-center">
+            <h1>
+              Welcome to Confort HomeStay
+            </h1>
+            <p>We gives you an a home like feeling while traveling and also gives 
+              opportunity to earn by renting your home Stay</p>
           </div>
         </div>
-      </div>
-    </section>
-  
-    <!-- Features Section -->
-    <section class="features-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <i class="fas fa-map-marker-alt fa-3x"></i>
-                <h3 class="card-title">Find Your Destination</h3>
-                <p>Search for vacation rentals in over 100,000 destinations around the world.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <i class="fas fa-calendar-alt fa-3x"></i>
-                <h3 class="card-title">Check Availability</h3>
-                <p>Easily see availability and prices for your selected dates.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <i class="fas fa-credit-card fa-3x"></i>
-                <h3 class="card-title">Secure Payment</h3>
-                <p>Book with confidence using our secure payment system.</p>
-              </div>
-            </div>
+        <div class="swiper-slide" style="background-image: url(../img/slider/slider1.webp);">
+          <div class="slide-caption text-center">
+            <h1>
+              Welcome to Confort HomeStay
+            </h1>
+            <p>We gives you an a home like feeling while traveling and also gives 
+              opportunity to earn by renting your home Stay</p>
           </div>
         </div>
+        
       </div>
-    </section>
-  
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 mx-auto">
-            <h2>Ready to Book Your Next Vacation Rental?</h2>
-            <a href="#" class="btn btn-light">Get Started</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    <!-- GSAP Animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/utils/Draggable.min.js"></script>
-      <!-- GSAP Animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/utils/ScrollTrigger.min.js"></script>
-  <!-- Custom JavaScript -->
-  <script>
-    // Example GSAP animation
-    gsap.from('.hero-section h1', {
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true
-      },
-      y: 30,
-      opacity: 0
-    });
-    gsap.from('.hero-section p', {
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true
-      },
-      y: 30,
-      opacity: 0
-    });
-    gsap.from('.features-section .card', {
-      scrollTrigger: {
-        trigger: '.features-section',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true
-      },
-      y: 30,
-      opacity: 0,
-      stagger: 0.3
-    });
-    gsap.from('.cta-section h2', {
-      scrollTrigger: {
-        trigger: '.cta-section',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true
-      },
-      y: 30,
-      opacity: 0
-    });
-  </script>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Bootstrap CDN-->
 </body>
-</html>

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* body{
+    min-width: 100vh;
+} */
+.banner_wrapper{
+    width: 100%;
+    height: 40.625rem;
+} 
+
+.banner_wrapper .swiper{
+    width: 100% !important;
+    height: 100%;
+}
+
+.banner_wrapper .swiper-slide{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    object-fit: cover !important;
+    position: relative;
+}
+
+.banner_wrapper .swiper-slide::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.banner_wrapper .swiper-pagination-bullets .swiper-pagination-bullet{
+    width: .9375rem;
+    height: .9375rem;
+    background-color: rgb(238, 207, 9);
+    border: 0.0625rem solid white;
+}
+
+.banner_wrapper .swiper .slide-caption{
+    height: 100%;
+    position: relative;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.banner_wrapper .swiper .slide-caption h1{
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* .swiper-slide {
+    width: 100%;
+    height: 100% !important; /* or any other fixed height */
+    /* background-size: cover !important;
+    object-fit: cover !important; */
+  /* }  */

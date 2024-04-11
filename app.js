@@ -7,7 +7,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
-const {listingSchema} = require("./schema.js");
+const {listingSchema, reviewSchema} = require("./schema.js");
 const Review = require("./models/review.js");
 const { log } = require("console");
 
@@ -38,6 +38,17 @@ app.get("/", (req, res) => {
 
 const validateListing = (req, res, next) =>{
   let {error} = listingSchema.validate(req.body);
+    if(error){
+      let errMsg = error.details.map((el) => el.message).join(",");
+      throw new ExpressError(400, errMsg);
+    }
+    else{
+      next();
+    }
+}
+
+const validateReview = (req, res, next) =>{
+  let {error} = reviewSchema.validate(req.body);
     if(error){
       let errMsg = error.details.map((el) => el.message).join(",");
       throw new ExpressError(400, errMsg);
@@ -104,7 +115,7 @@ app.delete("/listings/:id", wrapAsync(async (req, res, next)=>{
 
 //Reviews
 // Post Route
-app.post("/listings/:id/reviews", async (req, res) => {
+app.post("/listings/:id/reviews", validateReview, wrapAsync(async (req, res, next) => {
   let listing = await Listing.findById(req.params.id);
   let newReview = new Review(req.body.review);
   listing.reviews.push(newReview);
@@ -113,29 +124,14 @@ app.post("/listings/:id/reviews", async (req, res) => {
   await listing.save();
   
   res.redirect(`/listings/${listing.id}`);
-})
+}))
 
 //Show Route
 app.get("/listings/:id", wrapAsync(async (req, res, next) => {
-  try {
+
     const { id } = req.params;
-
-    if (!mongoose.isValidObjectId(id)) {
-      return res.status(400).send("Invalid ObjectId.");
-    }
-
-    const objectId = new mongoose.Types.ObjectId(id);
-    const listing = await Listing.findOne({ _id: objectId });
-
-    if (!listing) {
-      return res.status(404).send("Listing not found.");
-    }
-
+    const listing = await Listing.findById(id).populate("reviews");
     res.render("listings/show.ejs", { listing });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Internal server error.");
-  }
 }));
 
 //Index Route
