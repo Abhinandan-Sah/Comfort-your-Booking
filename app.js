@@ -32,7 +32,7 @@ main()
     console.log(err);
   });
 
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
   res.render("listings/home.ejs");
 });
 

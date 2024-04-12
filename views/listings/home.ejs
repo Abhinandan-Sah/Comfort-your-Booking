@@ -3,36 +3,111 @@
   <!-- <img src="../img/Group 25.jpg" width="200px" height="200px" alt=""> -->
 
   <!-- Banner Section -->
-  <section id="home" class="banner_wrapper p-0 ">
-    <!-- slider main container -->
-    <div class="swiper mySwiper ">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide" style="background-image: url(../img/slider/slider2.webp);">
-          <div class="slide-caption text-center">
-            <h1>
-              Welcome to Confort HomeStay
-            </h1>
-            <p>We gives you an a home like feeling while traveling and also gives 
-              opportunity to earn by renting your home Stay</p>
-          </div>
-        </div>
-        <div class="swiper-slide" style="background-image: url(../img/slider/slider1.webp);">
-          <div class="slide-caption text-center">
-            <h1>
-              Welcome to Confort HomeStay
-            </h1>
-            <p>We gives you an a home like feeling while traveling and also gives 
-              opportunity to earn by renting your home Stay</p>
-          </div>
-        </div>
-        
+  <section id="home" class="p-0 ">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="../img/slider/slider2.webp" class="d-block w-100" alt="..." style="height: 600px; object-fit: cover;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item " data-bs-interval="5000">
+          <img src="../img/gallery/5.webp" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="../img/gallery/6.webp" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+
+    <!-- Booking from slider -->
+    <div class="container booking-area col-11">
+      <form class="row">
+        <div class="col-lg mb-3 mb-lg-0">
+          <input type="date" class="form-control" placeholder="Date">
+        </div>
+        <div class="col-lg mb-3 mb-lg-0">
+          <input type="date" class="form-control" placeholder="Date">
+        </div>
+        <div class="col-lg mb-3 mb-lg-0">
+          <select class="form-select">
+            <option selected>Adults</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="col-lg mb-3 mb-lg-0">
+          <select class="form-select">
+            <option selected>Childrens</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="col-lg mb-3 mb-lg-0">
+          <button type="submit" class="btn edit-btn rounded-2 px-lg-3">CHECK AVAILABILITY</button>
+        </div>
+      </form>
+    </div>
+    
   </section>
+
+  <!-- Stretched link -->
+  <!-- 
+    <div class="container row d-inline-flex ">
+    <div class=" g-0 bg-body-secondary position-relative">
+      <div class="col-md-3 mb-md-0 p-md-4">
+        <img src="..." class="w-100" alt="...">
+      </div>
+      <div class="col-md-3 p-4 ps-md-0">
+        <h5 class="mt-0">Columns with stretched link</h5>
+        <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+        <a href="#" class="stretched-link">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class=" g-0 bg-body-secondary position-relative">
+      <div class="col-md-3 mb-md-0 p-md-4">
+        <img src="..." class="w-100" alt="...">
+      </div>
+      <div class="col-md-3 p-4 ps-md-0">
+        <h5 class="mt-0">Columns with stretched link</h5>
+        <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+        <a href="#" class="stretched-link">Go somewhere</a>
+      </div>
+    </div>
+
+  </div>
+-->
+  
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

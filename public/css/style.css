@@ -18,8 +18,9 @@ body{
 }
 
 .fa-compass{
-    color: #fe424d;
-    font-size: 2rem;
+    /* color: #fe424d; */
+    color: purple;
+    font-size: 3rem;
 }
 
 .nav-link{
@@ -28,6 +29,13 @@ body{
 
 #navbarNavAltMarkup{
    background-color: white !important;
+}
+
+/* Creating custon size for .nav-link */
+.nav-link{
+   font-size: 1.2rem !important;
+   margin-right: 4px;
+   font-weight: 800;
 }
 
  /* Footer */
