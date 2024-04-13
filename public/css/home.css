@@ -72,7 +72,7 @@
     object-fit: cover !important; */
   /* }  */
 
-  .carousel-inner{
+  /* .carousel-inner{
     width: 100%;
     height: 100%;
     background-position: center;
@@ -80,14 +80,121 @@
     background-size: cover !important;
     object-fit: cover !important;
     position: relative;
+} */
+
+/* Custom class for all */
+.main-title{
+    font-weight: 900 !important;
+    color: #fe424d;
+}
+.section-title{
+    font-weight: 900 !important;
 }
 
-  /* section Booking area */
-  .booking-area{
+
+
+
+
+/* section Booking area */
+.booking-area{
     background-color: white;
     box-shadow: 0 .625rem .9375rem 0 rgb(0 0 0/ 10%);
-    /* margin-top: -4rem; */
     padding: 3.125rem 1.875rem;
-    /* position: relative;
-    z-index: 999; */
+}
+
+/* 5 Room */
+.room_wrapper .room-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.room_wrapper .room-item img {
+    width: 100%;
+    -webkit-transition: all 400ms ease-in 0s;
+    transition: all 400ms ease-in 0s;
+}
+
+.room_wrapper .room-item:hover img {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+}
+
+.room_wrapper .room-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: all 400ms ease-in 0s;
+    transition: all 400ms ease-in 0s;
+}
+
+.room_wrapper .room-item:hover::before {
+    opacity: 0.6;
+}
+
+.room_wrapper .room-item-wrap {
+    position: absolute;
+    left: 1.875rem;
+    right: 1.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 11;
+}
+
+.room_wrapper .room-item .room-content {
+    border: .125rem solid white;
+    padding: 5rem 1.875rem;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+    -webkit-transition: all 500ms ease-in 0s;
+    transition: all 500ms ease-in 0s;
+    opacity: 0;
+    z-index: 11;
+}
+
+.room_wrapper .room-item:hover .room-content {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+/* Feedback Section */
+.testimonials {
+    padding: 50px 0;
   }
+
+  .testimonial-card {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+
+  .testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .testimonial-card h5 {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+/* Feedback section Exit */

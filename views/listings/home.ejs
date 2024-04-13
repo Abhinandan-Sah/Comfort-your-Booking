@@ -2,7 +2,7 @@
 <body  data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
   <!-- <img src="../img/Group 25.jpg" width="200px" height="200px" alt=""> -->
 
-  <!-- Banner Section -->
+  <!-- carousel Section -->
   <section id="home" class="p-0 ">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -12,21 +12,22 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
-          <img src="../img/slider/slider2.webp" class="d-block w-100" alt="..." style="height: 600px; object-fit: cover;">
+          <img src="../img/slider/slider2.webp" class="img-fluid d-block w-100" alt="..." style="height: 600px; object-fit: cover;">
           <div class="carousel-caption d-none d-md-block">
             <h5>First slide label</h5>
             <p>Some representative placeholder content for the first slide.</p>
           </div>
+          
         </div>
         <div class="carousel-item " data-bs-interval="5000">
-          <img src="../img/gallery/5.webp" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="...">
+          <img src="../img/gallery/5.webp" class="img-fluid d-block w-100" style="height: 600px; object-fit: cover;" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>Second slide label</h5>
             <p>Some representative placeholder content for the second slide.</p>
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-          <img src="../img/gallery/6.webp" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="...">
+          <img src="../img/gallery/6.webp" class="img-fluid d-block w-100" style="height: 600px; object-fit: cover;" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>Third slide label</h5>
             <p>Some representative placeholder content for the third slide.</p>
@@ -43,13 +44,15 @@
       </button>
     </div>
 
-    <!-- Booking from slider -->
-    <div class="container booking-area col-11">
-      <form class="row">
+    <!-- Booking form -->
+    <div class="container booking-area col-11 mt-3">
+      <form class="row" action="#">
         <div class="col-lg mb-3 mb-lg-0">
+          <!-- <label for="stay">From</label> -->
           <input type="date" class="form-control" placeholder="Date">
         </div>
         <div class="col-lg mb-3 mb-lg-0">
+          <!-- <label for="stay">To</label> -->
           <input type="date" class="form-control" placeholder="Date">
         </div>
         <div class="col-lg mb-3 mb-lg-0">
@@ -73,12 +76,131 @@
           </select>
         </div>
         <div class="col-lg mb-3 mb-lg-0">
-          <button type="submit" class="btn edit-btn rounded-2 px-lg-3">CHECK AVAILABILITY</button>
+          <button type="submit" class="btn edit-btn rounded-2 px-lg-3" onclick="alert('Booing done successfully')">CHECK AVAILABILITY</button>
         </div>
       </form>
     </div>
-    
   </section>
+
+  <!-- About Section -->
+  <section id="about" class="about_wrapper mt-3 pt-4">
+    <div class="container">
+      <div class="row flex-lg-row flex-column-reverse">
+        <div class="col-lg-6 text-center text-lg-start ">
+          <h3 class="section-title">Welcome to <span class="main-title">Confort <br class="d-none d-lg-block"> 
+          the haven</span> of your weekend</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, ipsam culpa sunt repudiandae, sit dolor consectetur totam possimus, nesciunt voluptatibus non. Non quibusdam harum temporibus!</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro excepturi vero blanditiis voluptas corporis molestiae necessitatibus, perspiciatis officiis illum.</p>
+          <a href="/listings" class="btn btn-dark mt-4">Explore</a>
+        </div>
+        <div class="col-lg-6 mb-4 mb-lg-0 ps-lg-4 text-center">
+          <img src="../img/about-img.svg" class="img-fluid" alt="about">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section Exit -->
+
+  <!-- Rooms Section -->
+  <section id="rooms" class="room_wrapper mt-4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12  text-center mb-5">
+          <h6>What I can do for your</h6>
+          <h3 class="section-title">Our Favorite Rooms</h3>
+        </div>
+      </div>
+      <div class="row m-0" >
+        <div class="col-md-4 mb-4 mb-lg-0">
+          <div class="room-item">
+            <img src="../img/room/room1.webp" class="img-fluid"  alt="room1">
+            <div class="room-item-wrap">
+              <div class="room-content">
+                <h5 class="text-white mb-lg-5 text-decoration-underline">Royal Suit</h5>
+                <p class="text-white">Discover five of our favourite dresses from our new collection that are destined to be worn and loved immediately</p>
+                <p class="text-white fw-bold mt-lg-4">&#8377;1200/night</p>
+                <a href="/listings" class="btn edit-btn border-white text-white mt-lg-5">Book now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 mb-lg-0">
+          <div class="room-item">
+            <img src="../img/room/room2.webp" class="img-fluid"  alt="room1">
+            <div class="room-item-wrap">
+              <div class="room-content">
+                <h5 class="text-white mb-lg-5 text-decoration-underline">Royal Suit</h5>
+                <p class="text-white">Discover five of our favourite dresses from our new collection that are destined to be worn and loved immediately</p>
+                <p class="text-white fw-bold mt-lg-4">&#8377;1200/night</p>
+                <a href="/listings" class="btn edit-btn border-white text-white mt-lg-5">Book now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 mb-lg-0">
+          <div class="room-item">
+            <img src="../img/room/room3.webp" class="img-fluid" alt="room1">
+            <div class="room-item-wrap">
+              <div class="room-content">
+                <h5 class="text-white mb-lg-5 text-decoration-underline">Royal Suit</h5>
+                <p class="text-white">Discover five of our favourite dresses from our new collection that are destined to be worn and loved immediately</p>
+                <p class="text-white fw-bold mt-lg-4">&#8377;1200/night</p>
+                <a href="/listings" class="btn edit-btn border-white text-white mt-lg-5">Book now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Rooms Section Exit -->
+
+  <!-- Feedback Section -->
+  <div class="testimonials">
+    <div class="container">
+      <h2 class="text-center mb-5">What Our Guests Say</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <img
+              src="https://scontent.fixc2-2.fna.fbcdn.net/v/t39.30808-6/430796318_10115540567190571_8582399341104871939_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=GUnvlcqidNoAb75VQKJ&_nc_ht=scontent.fixc2-2.fna&oh=00_AfCGkSzAHiHDiBow0MFZs7r4qxB81ZHbomHrFRBiwM8YXA&oe=66202083"
+              alt="Testimonial 1">
+            <p>"India was a life-changing experience for me. The stunning landscapes, the vibrant culture, and the
+              warm
+              hospitality of the people left a deep impression on my heart."</p>
+            <h4>Mark Zuckerberg</h4>
+            <h5>CEO Meta</h5>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Testimonial 2">
+            <p>"I've been to many countries, but India stands out as one of the most unique and memorable
+              destinations.
+              The diversity, the history, and the sheer energy of the country are truly awe-inspiring."</p>
+            <h4>Bill Gates</h4>
+            <h5>Founder Microsoft</h5>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWQPw2LTTj1JRuoh04Dt9_I4F3KlYSHc4mTA&s"
+              alt="Testimonial 3">
+            <p>"Traveling through India was a transformative experience for me. The country's spiritual depth, its
+              rich
+              cultural heritage, and the kindness of its people have left an indelible mark on my soul."</p>
+            <h4>Elon Musk</h4>
+            <h5>CEO Tesla</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Feedback Section Exit-->
 
   <!-- Stretched link -->
   <!-- 

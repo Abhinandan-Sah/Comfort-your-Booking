@@ -32,8 +32,14 @@ main()
     console.log(err);
   });
 
+// Home page
 app.get("/home", (req, res) => {
   res.render("listings/home.ejs");
+});
+
+// Login Page
+app.get("/login", (req, res) => {
+  res.render("listings/login.ejs");
 });
 
 const validateListing = (req, res, next) =>{

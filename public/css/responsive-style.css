@@ -1,0 +1,24 @@
+@media(max-width:1100px){
+    /*room*/
+    .room-item .room-content{
+        padding: 1rem 1.875rem;
+    }
+    .room-item .room-content h5{
+        font-size: 1.2rem;
+    }
+    .room-item .room-content p{
+        font-size: 0.75rem;
+    }
+}
+@media(max-width:991px){
+    /*room*/
+    .room-item .room-content{
+        padding: 2rem 1.875rem;
+    }
+    .room-item .room-content h5{
+        font-size: 1.5rem;
+    }
+    .room-item .room-content p{
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: poppins;
+      }
+      body {
+        background-image: url(../img/form-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: gray;
+      }
+      #form h1 {
+        text-align: center;
+        position: relative;
+        top: -1.5rem;
+        font-family: poppins;
+        font-weight: 700;
+      }
+      .container #form label {
+        display: block;
+        margin-bottom: 3px;
+        margin-top: 5px;
+        margin: 8px;
+      }
+      .container {
+        background-color: rgba(245, 245, 245, 0.603);
+        border-radius: 10px;
+        padding: 80px;
+        width: 300px;
+        max-width: 80%;
+      }
+      input[type="username"],
+      input[type="email"],
+      input[type="password"],
+      input[type="text"],
+      input[type="address"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+	      /* border-bottom: 1px solid #0624e5;
+        background-color: transparent; */
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+      input[type="submit"],
+      input[type="reset"] {
+        background-color: blanchedalmond;
+        color: white;
+      }
+      input[type="submit"],
+      input[type="reset"]:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+      button {
+        display: inline;
+        background-color: #fe424d;
+        padding: 0.5rem 1.2rem;
+        text-decoration: none;
+        object-fit: cover;
+        border: none;
+        border-radius: 3px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        color: white;
+        margin-top: 1em;
+      }
+
+      .btn2{
+        background-color: transparent;
+        border: 1px solid rgb(9, 15, 188);
+        color: rgb(9, 15, 188);
+        
+      }
+      .btn2:hover{
+        background-color: rgb(9, 15, 188);
+        border: 1px solid rgb(9, 15, 188);
+        color: white;
+        
+      }
+
+      button:hover {
+        background-color: #ed1f2d;
+        transition-duration: 1ms;
+        transition-timing-function: linear;
+      }
+
+      @media (min-width: 100px) and (max-width: 300px) {
+        .container {
+          padding: 30px;
+        }
+      }
+       @media(width: 844px) {
+        body {
+          overflow-y: hidden;
+        }
+        .container{
+          padding: 25px 40px;
+        }
+      } 
+    </style> 
+    
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" action="/listings">
+        <h1>Sign Up</h1>
+        <div class="form-control">
+          <label for="name">Name</label>
+        <input
+          type="text"
+          placeholder="Enter you name"
+          id="username"
+          required
+        /><br />
+          <span id="name_error"></span>
+          </div>
+
+        <div class="form-control">
+          <label for="email">Email</label>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          id="email"
+          required
+        /><br />
+        <span id="email_error" style="color: red;"></span>
+        </div>
+
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" id="password"/><br />
+          
+          <span id="password_error" style="color: red;"></span>
+        </div>
+        <button type="submit" onclick="alert('Login Successful. Click on ok to see homestay Listing')">Submit</button>
+        <button type="reset" class="btn2">Reset</button>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+
+const name_error = document.getElementById('name_error');
+const email_error = document.getElementById('email_error');
+const password_error = document.getElementById('password_error');
+
+form.addEventListener('submit', (e) => {
+    var email_check = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if(username.value=== '' || username.value===null){
+        e.preventDefault(); //it will prevent the form from submitting
+
+        name_error.innerHTML = "Name is required";
+    }
+    else{
+        name_error.innerHTML = "";
+
+    }
+
+    if(!email.value.match(email_check)){
+        e.preventDefault();
+        email_error.innerHTML = "Valid Email is required";
+    }
+    else{
+        email_error.innerHTML = "";
+
+    }
+
+    if(password.value.length < 6){
+        e.preventDefault(); //it will prevent the form from submitting
+
+        password_error.innerHTML = "Password must be more then 6";
+    }
+    else{
+        password_error.innerHTML = "";
+    }
+    if(password.value.length > 20){
+        e.preventDefault(); //it will prevent the form from submitting
+
+        password_error.innerHTML = "Password cannot be more than 20 character";
+    }
+    if(password.value.length == 'password'){
+        e.preventDefault(); //it will prevent the form from submitting
+        password_error.innerHTML = "Password cannot password";
+    }
+});
+
+    </script>
+  </body>
+</html>
