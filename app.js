@@ -10,12 +10,10 @@ const ExpressError = require("./utils/ExpressError.js");
 const {listingSchema, reviewSchema} = require("./schema.js");
 const Review = require("./models/review.js");
 const { log } = require("console");
+require('dotenv').config();
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
-async function main() {
-  await mongoose.connect(MONGO_URL);
-}
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -32,9 +30,18 @@ main()
     console.log(err);
   });
 
+  async function main() {
+    await mongoose.connect(MONGO_URL);
+  }
+  
+
 // Home page
 app.get("/home", (req, res) => {
   res.render("listings/home.ejs");
+});
+// Book listing page
+app.get("/book", (req, res) => {
+  res.render("listings/book.ejs");
 });
 
 // Login Page

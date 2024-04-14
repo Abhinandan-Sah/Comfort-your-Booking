@@ -26,6 +26,9 @@ body{
 .nav-link{
     color: #222222 !important;
 }
+.nav-link:hover{
+    color: #fe424d !important;
+}
 
 #navbarNavAltMarkup{
    background-color: white !important;
