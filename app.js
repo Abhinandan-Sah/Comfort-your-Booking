@@ -77,7 +77,7 @@ app.get("/listings/new", (req, res)=>{
 });
 
 //Create Route and error handling done on it with wrapAsync
-app.post("/listings", validateListing, wrapAsync(async (req, res, next)=>{
+app.post("/listings", wrapAsync(async (req, res, next)=>{
     // if(!req.body.listing){
     //   throw new ExpressError(404, "Send valid data for listing");
     // }
@@ -112,7 +112,7 @@ app.get("/listings/:id/edit", wrapAsync(async (req, res, next)=>{
 }));
 
 //Update Route
-app.put("/listings/:id", validateListing, wrapAsync(async(req, res, next)=>{
+app.put("/listings/:id", wrapAsync(async(req, res, next)=>{
   let {id} = req.params;
   await Listing.findByIdAndUpdate(id, {...req.body.listing});
   res.redirect(`/listings/${id}`);
